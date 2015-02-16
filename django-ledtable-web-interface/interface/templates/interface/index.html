@@ -1,0 +1,9 @@
+{% include 'interface/header.html' %}
+
+<h1 class="indexHeader"> What would you like to see?</h1>
+
+<ul>
+{% for a in animation_list %}
+    <li><a href="{% url 'interface:animation_builder' a.id %}">{{ a.name }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,3 @@
+recursive-include interface/static *
+recursive-include interface/templates *
+recursive-include interface/templatetags *

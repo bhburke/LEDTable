@@ -1,0 +1,22 @@
+{% include 'interface/header.html' %}
+
+<h1 class="animHeader">{{animation.name}}</h1>
+
+<form class="optForm" action="{% url 'interface:build' %}" method="post">
+{% csrf_token %}    
+{%load option_extras %}
+<input type="hidden" name="anim" value="{{animation.name}}" />
+{% for option in animation.option_set.all %}
+    <div class="animOption">
+    {%if option.option_type == "INT" %}
+        {% int_option option.name %}
+    {%elif option.option_type == "COLOR" %}
+        {% color_option %}
+    {%elif option.option_type == "COLORS" %}
+        {% color_list_option %}
+    {% endif %}
+    </div>
+
+{% endfor %}
+<input type="submit" value="Show me">
+</form>
