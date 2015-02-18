@@ -13,14 +13,11 @@ class Rainbow(BaseStripAnim):
     """
 
     def __init__(self, led, start=0, end=-1):
-	print "init driver"
-	print "strip size=120"
         super(Rainbow, self).__init__(led, start, end)
 
     def step(self, amt = 1):
         for i in range(self._size):
             h = (i + self._step) % 255
-	    print colors.hue2rgb_rainbow(h)
             self._led.set(self._start + i, colors.hue2rgb_rainbow(h))
 
         self._step += amt

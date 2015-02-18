@@ -104,7 +104,7 @@ def main(argv):
 	led = LEDStrip(driver)
 
 	anim = get_anim(led, opts)
-	anim.run()
+	anim.run(max_steps=900)
 
 
 if __name__ == "__main__":

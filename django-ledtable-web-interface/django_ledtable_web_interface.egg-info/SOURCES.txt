@@ -10,8 +10,6 @@ interface/models.py
 interface/tests.py
 interface/urls.py
 interface/views.py
-interface/static/.DS_Store
-interface/static/interface/.DS_Store
 interface/static/interface/colorpicker.js
 interface/static/interface/colorpicker.min.js
 interface/static/interface/colorpicker_themes.css
