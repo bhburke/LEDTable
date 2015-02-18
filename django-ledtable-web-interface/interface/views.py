@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from interface.models import Animation, Option
 from django.views import generic
 import sys
+import os
 
 # Create your views here.
 
@@ -25,5 +26,5 @@ def build(request):
             exec_args.append("--colors="+format_color_list(request.POST.getlist('colors[]'))+" ")
         else:
             exec_args.append("--"+key+"="+value+" ")
-    print " ".join(exec_args)
+    os.system("python /Users/Ben/Documents/lights/animate_strip/animate_strip.py --driver=visualizer "+" ".join(exec_args))
     return redirect('/interface')

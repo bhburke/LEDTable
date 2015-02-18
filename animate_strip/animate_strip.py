@@ -43,8 +43,8 @@ def build_party_mode(led, opts):
 
 def build_fireflies(led, opts):
 	colors = literal_eval(opts.get('--colors')) if opts.get('--colors') else [randcolor() for i in range(random.randint(2,6))]
-	width = int(opts.get('--width')) if opts.get('--width') else random.randint(1, 10))
-	count = int(opts.get('--count')) if opts.get('--count') else random.randint(1, 10))
+	width = int(opts.get('--width')) if opts.get('--width') else random.randint(1, 10)
+	count = int(opts.get('--count')) if opts.get('--count') else random.randint(1, 10)
 	return strip_animations.FireFlies(led, colors, width, count)
 
 def build_larson_scanner(led, opts):
